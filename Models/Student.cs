@@ -13,7 +13,7 @@ public partial class Student
 
     public int StatusId { get; set; }
 
-    public virtual Class Status { get; set; } = null!;
+    public virtual Class Class { get; set; } = null!;
 
-    public virtual Status StatusNavigation { get; set; } = null!;
+    public virtual Status Status { get; set; } = null!;
 }

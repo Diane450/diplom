@@ -20,3 +20,9 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/AuthorizeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/StudentWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/TeacherWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

@@ -55,9 +55,7 @@ public partial class Ispr2336SadykovViDiplomContext : DbContext
 
             entity.HasIndex(e => e.TeacherId, "FK_Classes_TeachersId_idx");
 
-            entity.Property(e => e.Class1)
-                .HasMaxLength(3)
-                .HasColumnName("Class");
+            entity.Property(e => e.ClassName).HasMaxLength(3);
 
             entity.HasOne(d => d.Teacher).WithMany(p => p.Classes)
                 .HasForeignKey(d => d.TeacherId)
@@ -153,16 +151,18 @@ public partial class Ispr2336SadykovViDiplomContext : DbContext
         {
             entity.HasKey(e => e.Id).HasName("PRIMARY");
 
-            entity.HasIndex(e => e.StatusId, "FK_Students_ClassId_idx");
+            entity.HasIndex(e => e.ClassId, "FK_Students_ClassId_idx");
 
-            entity.Property(e => e.FullName).HasMaxLength(255);
+            entity.HasIndex(e => e.StatusId, "FK_Students_StatusId_idx");
 
-            entity.HasOne(d => d.Status).WithMany(p => p.Students)
-                .HasForeignKey(d => d.StatusId)
+            entity.Property(e => e.FullName).HasMaxLength(100);
+
+            entity.HasOne(d => d.Class).WithMany(p => p.Students)
+                .HasForeignKey(d => d.ClassId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Students_ClassId");
 
-            entity.HasOne(d => d.StatusNavigation).WithMany(p => p.Students)
+            entity.HasOne(d => d.Status).WithMany(p => p.Students)
                 .HasForeignKey(d => d.StatusId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_Students_StatusId");
