@@ -26,16 +26,27 @@ namespace Diplom.Services
                 .Where(t => t.UserId == user.Id).FirstAsync();
         }
 
-        public static async Task<Dictionary<Class, List<Student>>> GetClassesData(Teacher teacher)
+        public static async Task<Dictionary<Class, List<StudentsDTO>>> GetClassesData(Teacher teacher)
         {
             List<Class> classes = await _dbContext.Classes.Where(c => c.TeacherId == teacher.Id).ToListAsync();
 
-            Dictionary<Class, List<Student>> result = new Dictionary<Class, List<Student>>();
+            Dictionary<Class, List<StudentsDTO>> result = new Dictionary<Class, List<StudentsDTO>>();
             for (int i = 0; i < classes.Count; i++)
             {
-                List<Student> students = await _dbContext.Students.Where(s => s.ClassId == classes[i].Id)
-                    .Include(s => s.Status)
-                    .ToListAsync();
+                List<StudentsDTO> students = await (from stud in _dbContext.Students
+                                                    join statuses in _dbContext.Statuses on stud.StatusId equals statuses.Id
+                                                    where stud.ClassId == classes[i].Id
+                                                    select new StudentsDTO()
+                                                    {
+                                                        Id = stud.Id,
+                                                        FullName = stud.FullName,
+                                                        ClassId = stud.ClassId,
+                                                        Statuss = new StatusDTO
+                                                        {
+                                                            Id = statuses.Id,
+                                                            Name = statuses.Name,
+                                                        }
+                                                    }).ToListAsync();
                 result.Add(classes[i], students);
             }
             return result;
@@ -51,11 +62,10 @@ namespace Diplom.Services
             return new ObservableCollection<Status>(await _dbContext.Statuses.ToListAsync());
         }
 
-        public static async Task SaveStudentChanges(Student student)
+        public static async Task SaveStudentChanges(StudentsDTO student)
         {
             Student Student = await _dbContext.Students.FirstAsync(s => s.Id == student.Id);
-            Student.Status = student.Status;
-            //Student.StatusId = student.StatusId;
+            Student.Status = await _dbContext.Statuses.FirstAsync(s=>s.Id==student.Statuss.Id);
             await _dbContext.SaveChangesAsync();
         }
 

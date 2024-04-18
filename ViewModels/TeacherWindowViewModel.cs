@@ -13,9 +13,9 @@ namespace Diplom.ViewModels
 {
     public class TeacherWindowViewModel : ViewModelBase
     {
-        private Dictionary<Class, List<Student>> _classesStudents = null!;
+        private Dictionary<Class, List<StudentsDTO>> _classesStudents = null!;
 
-        public Dictionary<Class, List<Student>> ClassesStudents
+        public Dictionary<Class, List<StudentsDTO>> ClassesStudents
         {
             get { return _classesStudents; }
             set { _classesStudents = this.RaiseAndSetIfChanged(ref _classesStudents, value); }
@@ -38,13 +38,13 @@ namespace Diplom.ViewModels
             set
             {
                 _selectedClass = this.RaiseAndSetIfChanged(ref _selectedClass, value);
-                Students = new ObservableCollection<Student>(ClassesStudents[SelectedClass]);
+                Students = new ObservableCollection<StudentsDTO>(ClassesStudents[SelectedClass]);
             }
         }
 
-        private ObservableCollection<Student> _students;
+        private ObservableCollection<StudentsDTO> _students;
 
-        public ObservableCollection<Student> Students
+        public ObservableCollection<StudentsDTO> Students
         {
             get { return _students; }
             set { _students = this.RaiseAndSetIfChanged(ref _students, value); }
@@ -58,15 +58,8 @@ namespace Diplom.ViewModels
         {
             ClassesStudents = await DBCall.GetClassesData(teacher);
             Classes = await DBCall.GetClasses(teacher);
-            Students = new ObservableCollection<Student>(ClassesStudents[Classes[0]]);
+            Students = new ObservableCollection<StudentsDTO>(ClassesStudents[Classes[0]]);
             SelectedClass = Classes[0];
-        }
-        public void UpdateStudent(Student student)
-        {
-            Student oldStudent = ClassesStudents[SelectedClass].First(s => s.Id == student.Id);
-            int index = ClassesStudents[SelectedClass].FindIndex(s => s == oldStudent);
-            ClassesStudents[SelectedClass][index] = student;
-            Students[index] = student;
         }
     }
 }

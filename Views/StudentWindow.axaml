@@ -17,11 +17,6 @@
 		</StackPanel>
 
 		<StackPanel Orientation="Horizontal">
-			<TextBlock Text="Класс: " Margin="0 0 0 10"/>
-			<TextBlock Text="{Binding Student.Class.ClassName}" Margin="0 0 0 10"/>
-		</StackPanel>
-
-		<StackPanel Orientation="Horizontal">
 			<TextBlock Text="Статус: " Margin="0 0 0 10" VerticalAlignment="Center" />
 			<ComboBox ItemsSource="{Binding Statuses}" Margin="0 0 0 10" SelectedItem="{Binding SelectedStatus}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}"/>
 		</StackPanel>

@@ -13,22 +13,22 @@ namespace Diplom.ViewModels
 {
     public class StudentWindowViewModel : ViewModelBase
     {
-        public Student CurrentStudent { get; set; }
+        public StudentsDTO CurrentStudent { get; set; }
 
-        private Student _student;
+        private StudentsDTO _student;
 
-        public Student Student
+        public StudentsDTO Student
         {
             get { return _student; }
             set { _student = value; }
         }
 
-        private ObservableCollection<Status> _statuses;
+        private static ObservableCollection<Status> _statuses;
 
-        public ObservableCollection<Status> Statuses
+        public static ObservableCollection<Status> Statuses
         {
             get { return _statuses; }
-            set { _statuses = this.RaiseAndSetIfChanged(ref _statuses, value); }
+            set { _statuses = value; }
         }
 
         private Status _selectedStatus;
@@ -47,70 +47,71 @@ namespace Diplom.ViewModels
             set { _message = this.RaiseAndSetIfChanged(ref _message, value); }
         }
 
-        private TeacherWindowViewModel _teacherWindowViewModel;
-
-        public TeacherWindowViewModel TeacherWindowViewModel
-        {
-            get { return _teacherWindowViewModel; }
-            set { _teacherWindowViewModel = this.RaiseAndSetIfChanged(ref _teacherWindowViewModel, value); }
-        }
-
-        public StudentWindowViewModel(Student student, TeacherWindowViewModel teacherWindowViewModel)
+        public StudentWindowViewModel(StudentsDTO student)
         {
             try
             {
-                TeacherWindowViewModel = teacherWindowViewModel;
                 CurrentStudent = student;
-                Student = new Student()
+                Student = new StudentsDTO()
                 {
                     Id = student.Id,
                     FullName = student.FullName,
-                    Class = student.Class,
-                    Status = student.Status,
-                    StatusId = student.StatusId,
+                    Statuss = new StatusDTO
+                    {
+                        Id = student.Statuss.Id,
+                        Name = student.Statuss.Name,
+                    },
                     ClassId = student.ClassId,
                 };
-                GetContent();
+                SelectedStatus = Statuses.Where(s => s.Id == Student.Statuss.Id).First();
             }
             catch
             {
                 Message = "Ошибка соединения";
             }
         }
-        
-        private async Task GetContent()
+        public static async Task GetContent()
         {
-            Statuses = await DBCall.GetStatuses();
-            SelectedStatus = Statuses.Where(s => s.Id == Student.Status.Id).First();
+            if (Statuses == null)
+            {
+                Statuses = await DBCall.GetStatuses();
+            }
         }
-        
+
         public async Task SaveChanges()
         {
             try
             {
-                Student.StatusId = SelectedStatus.Id;
-                Student.Status = SelectedStatus;
-                await DBCall.SaveStudentChanges(Student);
-                Student oldStudent = TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass].Where(s => s.Id == CurrentStudent.Id).First();
+
+                //Student oldStudent = TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass].Where(s => s.Id == CurrentStudent.Id).First();
+
+                CurrentStudent.Statuss = new StatusDTO()
+                {
+                    Id = SelectedStatus.Id,
+                    Name = SelectedStatus.Name
+                };
                 
-                CurrentStudent.Status.Name = SelectedStatus.Name;
-                CurrentStudent.Status.Id = SelectedStatus.Id;
-                CurrentStudent.StatusId = SelectedStatus.Id;
-                int index = TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass].FindIndex(s => s == oldStudent);
-                TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass][index] = new Student() 
+                Student.Statuss = new StatusDTO
                 {
-                    Id = CurrentStudent.Id,
-                    FullName = CurrentStudent.FullName,
-                    Class = CurrentStudent.Class,
-                    Status = CurrentStudent.Status,
+                    Id = SelectedStatus.Id,
+                    Name = SelectedStatus.Name,
                 };
-                TeacherWindowViewModel.Students[index] = new Student()
-                {
-                    Id = CurrentStudent.Id,
-                    FullName = CurrentStudent.FullName,
-                    Class = CurrentStudent.Class,
-                    Status = CurrentStudent.Status,
-                };
+                await DBCall.SaveStudentChanges(Student);
+                //int index = TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass].FindIndex(s => s == oldStudent);
+                //TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass][index] = new Student() 
+                //{
+                //    Id = CurrentStudent.Id,
+                //    FullName = CurrentStudent.FullName,
+                //    Class = CurrentStudent.Class,
+                //    Status = CurrentStudent.Status,
+                //};
+                //TeacherWindowViewModel.Students[index] = new Student()
+                //{
+                //    Id = CurrentStudent.Id,
+                //    FullName = CurrentStudent.FullName,
+                //    Class = CurrentStudent.Class,
+                //    Status = CurrentStudent.Status,
+                //};
                 Message = "Успешно сохранено";
             }
             catch

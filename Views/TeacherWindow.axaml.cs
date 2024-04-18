@@ -16,11 +16,12 @@ public partial class TeacherWindow : Window
         InitializeComponent();
         DataContext = new TeacherWindowViewModel(teacher);
     }
-    private void ChangeStatus(object sender, RoutedEventArgs e)
+    private async void ChangeStatus(object sender, RoutedEventArgs e)
     {
         var button = (Button)sender;
-        var dataContext = (Student)button.DataContext;
-        var requestWindow = new StudentWindow(dataContext, (TeacherWindowViewModel)DataContext);
+        var dataContext = (StudentsDTO)button.DataContext;
+        await StudentWindow.GetContent();
+        var requestWindow = new StudentWindow(dataContext);
         requestWindow.ShowDialog(this);
     }
 }

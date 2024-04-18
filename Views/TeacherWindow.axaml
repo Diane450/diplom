@@ -29,7 +29,7 @@
 				  BorderThickness="1" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
 					<DataGrid.Columns>
 						<DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"  />
-						<DataGridTextColumn Header="Статус" Binding="{Binding Status.Name}" />
+						<DataGridTextColumn Header="Статус" Binding="{Binding Statuss.Name}" />
 						<DataGridTemplateColumn Header="">
 							<DataGridTemplateColumn.CellTemplate>
 								<DataTemplate>
