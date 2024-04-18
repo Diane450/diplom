@@ -10,4 +10,6 @@ public partial class Menu
     public string? Name { get; set; }
 
     public virtual ICollection<MenuDish> MenuDishes { get; set; } = new List<MenuDish>();
+
+    public virtual ICollection<MenuSchedule> MenuSchedules { get; set; } = new List<MenuSchedule>();
 }

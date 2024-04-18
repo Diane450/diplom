@@ -25,6 +25,8 @@ public partial class Ispr2336SadykovViDiplomContext : DbContext
 
     public virtual DbSet<MenuDish> MenuDishes { get; set; }
 
+    public virtual DbSet<MenuSchedule> MenuSchedules { get; set; }
+
     public virtual DbSet<Product> Products { get; set; }
 
     public virtual DbSet<Recipe> Recipes { get; set; }
@@ -110,6 +112,20 @@ public partial class Ispr2336SadykovViDiplomContext : DbContext
                 .HasForeignKey(d => d.MenuId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK_MenuDishes_MenuId");
+        });
+
+        modelBuilder.Entity<MenuSchedule>(entity =>
+        {
+            entity.HasKey(e => e.Id).HasName("PRIMARY");
+
+            entity.ToTable("MenuSchedule");
+
+            entity.HasIndex(e => e.MenuId, "FK_MenuSchedule_MenuId_idx");
+
+            entity.HasOne(d => d.Menu).WithMany(p => p.MenuSchedules)
+                .HasForeignKey(d => d.MenuId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK_MenuSchedule_MenuId");
         });
 
         modelBuilder.Entity<Product>(entity =>

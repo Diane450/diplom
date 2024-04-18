@@ -38,6 +38,9 @@ namespace Diplom.Views
                         Close();
                         break;
                     case 3:
+                        var cookWindow = new CookWindow();
+                        cookWindow.Show();
+                        Close();
                         break;
                 }
             }

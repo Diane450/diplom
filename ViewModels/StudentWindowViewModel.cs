@@ -82,9 +82,6 @@ namespace Diplom.ViewModels
         {
             try
             {
-
-                //Student oldStudent = TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass].Where(s => s.Id == CurrentStudent.Id).First();
-
                 CurrentStudent.Statuss = new StatusDTO()
                 {
                     Id = SelectedStatus.Id,
@@ -97,21 +94,6 @@ namespace Diplom.ViewModels
                     Name = SelectedStatus.Name,
                 };
                 await DBCall.SaveStudentChanges(Student);
-                //int index = TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass].FindIndex(s => s == oldStudent);
-                //TeacherWindowViewModel.ClassesStudents[TeacherWindowViewModel.SelectedClass][index] = new Student() 
-                //{
-                //    Id = CurrentStudent.Id,
-                //    FullName = CurrentStudent.FullName,
-                //    Class = CurrentStudent.Class,
-                //    Status = CurrentStudent.Status,
-                //};
-                //TeacherWindowViewModel.Students[index] = new Student()
-                //{
-                //    Id = CurrentStudent.Id,
-                //    FullName = CurrentStudent.FullName,
-                //    Class = CurrentStudent.Class,
-                //    Status = CurrentStudent.Status,
-                //};
                 Message = "Успешно сохранено";
             }
             catch

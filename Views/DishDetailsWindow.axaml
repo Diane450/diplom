@@ -1,0 +1,32 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="using:Diplom.ViewModels"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="320" Height="300" MaxWidth="350" MaxHeight="420" MinWidth="320" MinHeight="300"
+        x:Class="Diplom.DishDetailsWindow"
+		x:DataType="vm:DishDetailsWindowViewModel"
+        Icon="/Assets/open-book.png"
+        Title=""
+		WindowStartupLocation="CenterScreen">
+	<StackPanel>
+			<TextBlock Text="{Binding Dish.Name}" FontWeight="Bold" Margin="10"/>
+			<TextBlock Text="Ингридиенты на 1 порцию" FontWeight="Bold" Margin="10"/>
+
+		<DataGrid ItemsSource="{Binding Recipe}"
+						IsReadOnly="False"
+						CanUserReorderColumns="True"
+						CanUserResizeColumns="True"
+						CanUserSortColumns="False"
+						GridLinesVisibility="None"
+					  HeadersVisibility="None"
+					  BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+
+			<DataGrid.Columns >
+				<DataGridTextColumn Header="Ингридиент: " Binding="{Binding Product.Name}" />
+				<DataGridTextColumn Header="Количество: " Binding="{Binding ProductQuantity}" />
+			</DataGrid.Columns>
+		</DataGrid>
+	</StackPanel>
+	
+</Window>

@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:vm="using:Diplom.ViewModels"
+		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" Width="430" Height="560"
+        x:Class="Diplom.CookWindow"
+		x:DataType="vm:CookWindowViewModel"
+        Icon="/Assets/open-book.png"
+        Title=""
+		WindowStartupLocation="CenterScreen">
+	
+	<StackPanel Margin="20">
+		<StackPanel Orientation="Horizontal">
+			<TextBlock Text="Дата: " Margin="10" FontWeight="Bold"/>
+			<TextBlock Text="{Binding MenuSchedule.Date}" Margin="10" FontWeight="Bold"/>
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal">
+			<TextBlock Text="Меню: " Margin="10" FontWeight="Bold"/>
+			<TextBlock Text="{Binding MenuSchedule.Menu.Name}" Margin="10" FontWeight="Bold"/>
+		</StackPanel>
+
+		<StackPanel Orientation="Horizontal">
+			<TextBlock Text="Количество обучающихся: " Margin="10" FontWeight="Bold"/>
+			<TextBlock Text="{Binding StudentsCount}" Margin="10" FontWeight="Bold"/>
+		</StackPanel>
+
+		<DataGrid ItemsSource="{Binding Dishes}"
+					  IsReadOnly="False"
+					  CanUserReorderColumns="True"
+					  CanUserResizeColumns="True"
+					  CanUserSortColumns="False"
+					  GridLinesVisibility="None"
+					HeadersVisibility="None"
+					BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+			<DataGrid.Columns >
+				<DataGridTextColumn Header="Блюдо: " Binding="{Binding Dish.Name}" />
+				<DataGridTemplateColumn Header="">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Content="Посмотреть детали" Margin="10 10 0 10" Click="GetDetails"></Button>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+	</StackPanel>
+	
+	
+</Window>
