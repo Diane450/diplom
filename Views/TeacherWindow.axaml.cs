@@ -21,7 +21,7 @@ public partial class TeacherWindow : Window
         var button = (Button)sender;
         var dataContext = (StudentsDTO)button.DataContext;
         await StudentWindow.GetContent();
-        var requestWindow = new StudentWindow(dataContext);
-        requestWindow.ShowDialog(this);
+        var studentWindow = new StudentWindow(dataContext);
+        studentWindow.ShowDialog(this);
     }
 }

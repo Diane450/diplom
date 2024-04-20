@@ -38,5 +38,8 @@
     <Compile Update="Views\AuthorizeWindow.axaml.cs">
       <DependentUpon>AuthorizeWindow.axaml</DependentUpon>
     </Compile>
+    <Compile Update="Views\EditProductWindow.axaml.cs">
+      <DependentUpon>EditProductWindow.axaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 </Project>

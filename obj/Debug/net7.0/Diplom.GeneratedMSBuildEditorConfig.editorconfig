@@ -18,6 +18,9 @@ build_property.ProjectDir = C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\ч�
 [C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
+[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/AdminWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
 [C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/AuthorizeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
@@ -25,6 +28,12 @@ build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/DishDetailsWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/EditProductWindow.axaml]
+build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
+
+[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/NewProductWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
 [C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/StudentWindow.axaml]

@@ -29,7 +29,9 @@ namespace Diplom.Views
                         ErrorLabel.Content = "Неправильный код";
                         break;
                     case 1:
-                        
+                        var adminWindow = new AdminWindow();
+                        adminWindow.Show();
+                        Close();
                         break;
                     case 2:
                         Teacher teacher = await DBCall.GetTeacherData(user);

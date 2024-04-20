@@ -1,0 +1,18 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Diplom.ViewModels"
+		mc:Ignorable="d" Width="320" Height="400" MaxWidth="350" MaxHeight="420" MinWidth="320" MinHeight="400"
+        x:Class="Diplom.NewProductWindow"
+		x:DataType="vm:NewProductWindowViewModel"
+        Icon="/Assets/open-book.png"
+        Title=""
+		WindowStartupLocation="CenterScreen">
+        <StackPanel Margin="20" >
+			<TextBlock Text="Название ингредиента: " Margin="0 0 0 20" FontWeight="Bold"/>
+			<TextBox Width="150" TextWrapping="Wrap" MaxLength="100" Text="{Binding Product.Name}" Margin="0 0 0 20" HorizontalAlignment="Left"/>
+			<Button Content="Добавить" Margin="0 0 0 20" Command="{Binding AddNewProduct}" IsEnabled="{Binding IsButtonEnable}"/>
+			<TextBlock Text="{Binding Message}"/>
+		</StackPanel>
+</Window>

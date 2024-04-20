@@ -92,7 +92,7 @@ namespace Diplom.Services
             if (lastRecord == null || lastRecord.MenuId == menus[menus.Count - 1].Id)
                 todayMenu.Menu = menus[0];
             else
-                todayMenu.Menu = menus[lastRecord.MenuId + 1];
+                todayMenu.Menu = menus[lastRecord.MenuId];
 
             await _dbContext.MenuSchedules.AddAsync(todayMenu);
             await _dbContext.SaveChangesAsync();
@@ -116,7 +116,34 @@ namespace Diplom.Services
 
         public static async Task<int> GetStudentsCount()
         {
-            return await _dbContext.Students.Where(s=>s.StatusId==1).CountAsync();
+            return await _dbContext.Students.Where(s => s.StatusId == 1).CountAsync();
+        }
+
+        public static async Task<ObservableCollection<ProductDTO>> GetProducts()
+        {
+            return new ObservableCollection<ProductDTO>(await _dbContext.Products.Select(p => new ProductDTO
+            {
+                Id = p.Id,
+                Name = p.Name,
+            }).ToListAsync());
+        }
+
+        public static async Task AddNewProduct(ProductDTO productDTO)
+        {
+            var product = new Product
+            {
+                Name = productDTO.Name
+            };
+            await _dbContext.Products.AddAsync(product);
+            await _dbContext.SaveChangesAsync();
+            productDTO.Id = product.Id;
+        }
+    
+        public static async Task EditProduct(ProductDTO productDTO)
+        {
+            Product product = await _dbContext.Products.FirstAsync(x=>x.Id == productDTO.Id);
+            product.Name = productDTO.Name;
+            await _dbContext.SaveChangesAsync();
         }
     }
 }
