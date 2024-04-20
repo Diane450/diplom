@@ -220,7 +220,9 @@ namespace Diplom.Services
 
         public static async Task DeleteMenu(MenuDTO menuDTO)
         {
-
+            var menu = await _dbContext.Menus.FirstAsync(x => x.Id == menuDTO.Id);
+            _dbContext.Menus.Remove(menu);
+            await _dbContext.SaveChangesAsync();
         }
     }
 }

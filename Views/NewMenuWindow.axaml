@@ -22,7 +22,7 @@
 		<TextBlock Text="Ужин: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
 		<ComboBox ItemsSource="{Binding Dinners}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedDinner}"/>
 
-		<Button Content="Добавить" Margin="0 0 0 20" Command="{Binding AddNewMenu}"/>
+		<Button Content="Добавить" Margin="0 0 0 20" Command="{Binding AddNewMenu}" IsEnabled="{Binding IsEnable}"/>
 		<TextBlock Text="{Binding Message}"/>
 	</StackPanel>
 </Window>

@@ -23,6 +23,14 @@ namespace Diplom.ViewModels
             set { _message = this.RaiseAndSetIfChanged(ref _message, value); }
         }
 
+        private bool _isEnable = true;
+
+        public bool IsEnable
+        {
+            get { return _isEnable; }
+            set { _isEnable = this.RaiseAndSetIfChanged(ref _isEnable, value); }
+        }
+
         public DeleteMenuWindowViewModel(MenuDTO menuDTO, AdminWindowViewModel adminWindowViewModel)
         {
             AdminWindowViewModel = adminWindowViewModel;
@@ -34,6 +42,9 @@ namespace Diplom.ViewModels
             try
             {
                 await DBCall.DeleteMenu(MenuDTO);
+                AdminWindowViewModel.Menus.Remove(MenuDTO);
+                Message = "Удалено успешно";
+                IsEnable = false;
             }
             catch
             {

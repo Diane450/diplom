@@ -110,7 +110,7 @@ public partial class Ispr2336SadykovViDiplomContext : DbContext
 
             entity.HasOne(d => d.Menu).WithMany(p => p.MenuDishes)
                 .HasForeignKey(d => d.MenuId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
+                .OnDelete(DeleteBehavior.Cascade)
                 .HasConstraintName("FK_MenuDishes_MenuId");
         });
 
