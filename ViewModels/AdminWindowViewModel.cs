@@ -13,7 +13,7 @@ namespace Diplom.ViewModels
 {
     public class AdminWindowViewModel:ViewModelBase
     {
-        private int _index;
+        private int _index = 0;
 
         public int Index
         {
@@ -29,6 +29,13 @@ namespace Diplom.ViewModels
             set { _products = this.RaiseAndSetIfChanged(ref _products, value); }
         }
 
+        private ObservableCollection<MenuDTO> _menus;
+
+        public ObservableCollection<MenuDTO> Menus
+        {
+            get { return _menus; }
+            set { _menus = this.RaiseAndSetIfChanged(ref _menus, value); }
+        }
         public AdminWindowViewModel()
         {
             GetContent();
@@ -36,6 +43,8 @@ namespace Diplom.ViewModels
         public async Task GetContent()
         {
             Products = await DBCall.GetProducts();
+
+            Menus = await DBCall.GetMenus();
         }
     }
 }

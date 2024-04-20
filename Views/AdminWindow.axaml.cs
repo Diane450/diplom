@@ -27,4 +27,26 @@ public partial class AdminWindow : Window
         var productWindow = new EditProductWindow(dataContext);
         productWindow.ShowDialog(this);
     }
+
+    private void EditMenu(object sender, RoutedEventArgs e)
+    {
+        var button = (Button)sender;
+        var dataContext = (MenuDTO)button.DataContext;
+        var menuWindow = new EditMenuWindow(dataContext);
+        menuWindow.ShowDialog(this);
+    }
+
+    private void NewMenu(object sender, RoutedEventArgs e)
+    {
+        var window = new NewMenuWindow((AdminWindowViewModel)DataContext);
+        window.ShowDialog(this);
+    }
+    private void DeleteMenu(object sender, RoutedEventArgs e)
+    {
+        var button = (Button)sender;
+        var dataContext = (MenuDTO)button.DataContext;
+        var menuWindow = new DeleteMenuWindow(dataContext, (AdminWindowViewModel)DataContext);
+        menuWindow.ShowDialog(this);
+    }
+
 }

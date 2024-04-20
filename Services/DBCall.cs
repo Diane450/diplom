@@ -138,12 +138,89 @@ namespace Diplom.Services
             await _dbContext.SaveChangesAsync();
             productDTO.Id = product.Id;
         }
-    
+
         public static async Task EditProduct(ProductDTO productDTO)
         {
-            Product product = await _dbContext.Products.FirstAsync(x=>x.Id == productDTO.Id);
+            Product product = await _dbContext.Products.FirstAsync(x => x.Id == productDTO.Id);
             product.Name = productDTO.Name;
             await _dbContext.SaveChangesAsync();
+        }
+
+        public static async Task<ObservableCollection<MenuDTO>> GetMenus()
+        {
+            return new ObservableCollection<MenuDTO>(await _dbContext.Menus.Select(p => new MenuDTO
+            {
+                Id = p.Id,
+                Name = p.Name,
+            }).ToListAsync());
+        }
+        public static async Task<ObservableCollection<Dish>> GetAllBreakfasts()
+        {
+            return new ObservableCollection<Dish>(await _dbContext.Dishes.Where(d => d.DishesTypeId == 1).ToListAsync());
+        }
+
+        public static async Task<ObservableCollection<Dish>> GetAllLunches()
+        {
+            return new ObservableCollection<Dish>(await _dbContext.Dishes.Where(d => d.DishesTypeId == 2).ToListAsync());
+        }
+
+        public static async Task<ObservableCollection<Dish>> GetAllDinners()
+        {
+            return new ObservableCollection<Dish>(await _dbContext.Dishes.Where(d => d.DishesTypeId == 3).ToListAsync());
+        }
+
+        public static async Task<ObservableCollection<MenuDish>> GetMenuDishes(MenuDTO menu)
+        {
+            return new ObservableCollection<MenuDish>(await _dbContext.MenuDishes.Where(d => d.MenuId == menu.Id)
+                .Include(x => x.Dish)
+                .ToListAsync());
+        }
+
+        public static async Task UpdateMenuDishes(ObservableCollection<MenuDish> menuDishes)
+        {
+            for (var i = 0; i < menuDishes.Count; i++)
+            {
+                var dish = await _dbContext.MenuDishes.FirstAsync(x => x.Id == menuDishes[i].Id);
+                dish.Dish = menuDishes[i].Dish;
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
+        public static async Task UpdateMenu(MenuDTO menuDTO)
+        {
+            var menu = await _dbContext.Menus.FirstAsync(x => x.Id == menuDTO.Id);
+            menu.Name = menuDTO.Name;
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public static async Task AddNewMenu(MenuDTO menuDTO)
+        {
+            var menu = new Menu()
+            {
+                Name = menuDTO.Name
+            };
+            await _dbContext.Menus.AddAsync(menu);
+            await _dbContext.SaveChangesAsync();
+            menuDTO.Id = menu.Id;
+        }
+
+        public static async Task AddNewMenuDishes(MenuDTO menuDTO, ObservableCollection<Dish> menuDishes)
+        {
+            for (int i = 0; i < menuDishes.Count; i++)
+            {
+                var menuDish = new MenuDish()
+                {
+                    MenuId = menuDTO.Id,
+                    Dish = menuDishes[i]
+                };
+                await _dbContext.MenuDishes.AddAsync(menuDish);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
+        public static async Task DeleteMenu(MenuDTO menuDTO)
+        {
+
         }
     }
 }

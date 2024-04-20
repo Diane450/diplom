@@ -15,7 +15,38 @@
 			<TextBlock Margin="5"></TextBlock>
 		</TabItem>
 		<TabItem Header="Меню">
-			<TextBlock Margin="5"></TextBlock>
+			<StackPanel>
+				<StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+					<TextBlock Text="Список всех меню" FontWeight="Bold"/>
+					<Button Content="Добавить новое" Margin="20 0 0 0" Click="NewMenu"/>
+				</StackPanel>
+				<DataGrid ItemsSource="{Binding Menus}"
+					  IsReadOnly="False"
+					  CanUserReorderColumns="True"
+					  CanUserResizeColumns="True"
+					  CanUserSortColumns="False"
+					  GridLinesVisibility="None"
+					HeadersVisibility="None"
+					BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+					<DataGrid.Columns >
+						<DataGridTextColumn Header="" Binding="{Binding Name}" />
+						<DataGridTemplateColumn Header="">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Button Content="Редактировать" Margin="10 10 0 10" Click="EditMenu"></Button>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+						<DataGridTemplateColumn Header="">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Button Content="Удалить" Margin="10 10 0 10" Click="DeleteMenu"/>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+			</StackPanel>
 		</TabItem>
 		<TabItem Header="Ингредиенты">
 			<StackPanel>

@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Diplom.ViewModels"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Diplom.NewMenuWindow"
+        x:DataType="vm:NewMenuWindowViewModel"
+        Icon="/Assets/open-book.png"
+        Title=""
+		WindowStartupLocation="CenterScreen">
+	<StackPanel Margin="20" >
+		<TextBlock Text="Название Меню: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
+		<TextBox Width="150" TextWrapping="Wrap" MaxLength="50" Text="{Binding Menu.Name}" Margin="0 0 0 20" HorizontalAlignment="Left"/>
+
+		<TextBlock Text="Завтрак: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
+		<ComboBox ItemsSource="{Binding Breakfasts}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedBreakfast}"/>
+
+		<TextBlock Text="Обед: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
+		<ComboBox ItemsSource="{Binding Lunches}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedLunch}"/>
+
+		<TextBlock Text="Ужин: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
+		<ComboBox ItemsSource="{Binding Dinners}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedDinner}"/>
+
+		<Button Content="Добавить" Margin="0 0 0 20" Command="{Binding AddNewMenu}"/>
+		<TextBlock Text="{Binding Message}"/>
+	</StackPanel>
+</Window>
