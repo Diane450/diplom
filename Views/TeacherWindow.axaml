@@ -3,13 +3,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:Diplom.ViewModels"
-		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		mc:Ignorable="d" Width="1140" Height="560" MaxWidth="1140" MaxHeight="600"
         x:Class="Diplom.TeacherWindow"
         x:DataType="vm:TeacherWindowViewModel"
         Icon="/Assets/open-book.png"
         Title=""
 		WindowStartupLocation="CenterScreen">
 	<StackPanel Orientation="Vertical">
+		<StackPanel Margin="20" Orientation="Horizontal">
+			<TextBlock Text="Преподаватель: "/>
+			<TextBlock Text="{Binding Teacher.FullName}" HorizontalAlignment="Left" FontWeight="Bold"/>
+		</StackPanel>
+		
 		<StackPanel Orientation="Horizontal">
 			<ListBox ItemsSource="{Binding Classes}" SelectedItem="{Binding SelectedClass}" SelectionMode="Single" Width="150" Grid.Column="0" HorizontalAlignment="Left">
 				<ListBox.ItemTemplate>

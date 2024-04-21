@@ -3,14 +3,22 @@
              x:Class="Diplom.App"
              xmlns:local="using:Diplom"
              RequestedThemeVariant="Default">
-             <!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
+	<!--xmlns:themes="clr-namespace:Material.Styles.Themes;assembly=Material.Styles">-->
+	<!-- "Default" ThemeVariant follows system theme variant. "Dark" or "Light" are other available options. -->
 
-    <Application.DataTemplates>
-        <local:ViewLocator/>
-    </Application.DataTemplates>
-  
-    <Application.Styles>
-        <FluentTheme />
+	<Application.DataTemplates>
+		<local:ViewLocator/>
+	</Application.DataTemplates>
+
+	<Application.Resources>
+		<SolidColorBrush x:Key="SystemControlTransparentBrush" Color="Transparent" />
+	</Application.Resources>
+
+	<Application.Styles>
+		<!--<FluentTheme/>-->
+		<!--<themes:MaterialTheme BaseTheme="Light" PrimaryColor="Purple" SecondaryColor="Lime" />-->
+		<SimpleTheme/>
+		<StyleInclude Source="avares://Citrus.Avalonia/Candy.xaml"/>
 		<StyleInclude Source="avares://Avalonia.Controls.DataGrid/Themes/Fluent.xaml"/>
-    </Application.Styles>
+	</Application.Styles>
 </Application>

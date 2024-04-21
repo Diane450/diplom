@@ -54,7 +54,7 @@ namespace Diplom.ViewModels
         {
             try
             {
-                //await DBCall.AddNewProduct(Product);
+                await DBCall.AddNewProduct(Product);
                 Model.Products.Add(Product);
                 Message = "Новый ингредиент добавлен";
             }

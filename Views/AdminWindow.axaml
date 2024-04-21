@@ -12,9 +12,9 @@
         
 	<TabControl SelectedIndex="{Binding Index}" TabStripPlacement="Left" Margin="0 20 0 0">
 		<TabItem Header="Блюдо">
-			<StackPanel>
+			<StackPanel Margin="20 20 0 0">
 				<StackPanel Orientation="Horizontal" Margin="0 0 0 20">
-					<TextBlock Text="Список всех блюд" FontWeight="Bold"/>
+					<TextBlock Text="Список всех блюд" FontWeight="Bold" VerticalAlignment="Center"/>
 					<Button Content="Добавить новое" Margin="20 0 0 0" Click="NewDish"/>
 				</StackPanel>
 				<DataGrid ItemsSource="{Binding Dishes}"
@@ -39,9 +39,9 @@
 			</StackPanel>
 		</TabItem>
 		<TabItem Header="Меню">
-			<StackPanel>
+			<StackPanel Margin="20 20 0 0">
 				<StackPanel Orientation="Horizontal" Margin="0 0 0 20">
-					<TextBlock Text="Список всех меню" FontWeight="Bold"/>
+					<TextBlock Text="Список всех меню" FontWeight="Bold" VerticalAlignment="Center"/>
 					<Button Content="Добавить новое" Margin="20 0 0 0" Click="NewMenu"/>
 				</StackPanel>
 				<DataGrid ItemsSource="{Binding Menus}"
@@ -73,9 +73,9 @@
 			</StackPanel>
 		</TabItem>
 		<TabItem Header="Ингредиенты">
-			<StackPanel>
+			<StackPanel Margin="20 20 0 0">
 				<StackPanel Orientation="Horizontal" Margin="0 0 0 20">
-					<TextBlock Text="Список всех ингредиентов" FontWeight="Bold"/>
+					<TextBlock Text="Список всех ингредиентов" FontWeight="Bold" VerticalAlignment="Center"/>
 					<Button Content="Добавить новый" Click="NewProduct" Margin="20 0 0 0"/>
 				</StackPanel>
 				<DataGrid ItemsSource="{Binding Products}"
@@ -84,6 +84,7 @@
 					  CanUserResizeColumns="True"
 					  CanUserSortColumns="False"
 					  GridLinesVisibility="None"
+						  
 					HeadersVisibility="None"
 					BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
 					<DataGrid.Columns >

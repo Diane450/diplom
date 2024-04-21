@@ -3,26 +3,26 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:vm="using:Diplom.ViewModels"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" Width="410" Height="560"
         x:Class="Diplom.EditMenuWindow"
         x:DataType="vm:EditMenuWindowViewModel"
         Icon="/Assets/open-book.png"
         Title=""
 		WindowStartupLocation="CenterScreen">
 	<StackPanel Margin="20" >
-		<TextBlock Text="Название Меню: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
+		<TextBlock Text="Название Меню: " Margin="0 0 0 10" FontWeight="Bold" VerticalAlignment="Center"/>
 		<TextBox Width="150" TextWrapping="Wrap" MaxLength="50" Text="{Binding Menu.Name}" Margin="0 0 0 20" HorizontalAlignment="Left"/>
 		
-		<TextBlock Text="Завтрак: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
-		<ComboBox ItemsSource="{Binding Breakfasts}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedBreakfast}"/>
+		<TextBlock Text="Завтрак: " Margin="0 0 0 10" FontWeight="Bold" VerticalAlignment="Center"/>
+		<ComboBox ItemsSource="{Binding Breakfasts}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedBreakfast}" Margin="0 0 0 20"/>
 
-		<TextBlock Text="Обед: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
-		<ComboBox ItemsSource="{Binding Lunches}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedLunch}"/>
+		<TextBlock Text="Обед: " Margin="0 0 0 10" FontWeight="Bold" VerticalAlignment="Center"/>
+		<ComboBox ItemsSource="{Binding Lunches}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedLunch}" Margin="0 0 0 20"/>
 
-		<TextBlock Text="Ужин: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
-		<ComboBox ItemsSource="{Binding Dinners}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedDinner}"/>
+		<TextBlock Text="Ужин: " Margin="0 0 0 10" FontWeight="Bold" VerticalAlignment="Center"/>
+		<ComboBox ItemsSource="{Binding Dinners}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" SelectedItem="{Binding SelectedDinner}" Margin="0 0 0 20"/>
 
-		<Button Content="Изменить" Margin="0 0 0 20" Command="{Binding EditMenu}" IsEnabled="{Binding IsEnable}"/>
+		<Button Content="Изменить" Margin="20 0 0 10" Command="{Binding EditMenu}" IsEnabled="{Binding IsEnable}" HorizontalAlignment="Center"/>
 		<TextBlock Text="{Binding Message}"/>
 	</StackPanel>
 </Window>

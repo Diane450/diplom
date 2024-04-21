@@ -139,7 +139,6 @@ C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал ко
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win-arm64\native\libHarfBuzzSharp.dll
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win-x64\native\libHarfBuzzSharp.dll
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win-x86\native\libHarfBuzzSharp.dll
-C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\linux-arm\native\libSkiaSharp.so
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\linux-arm64\native\libSkiaSharp.so
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\linux-musl-x64\native\libSkiaSharp.so
@@ -148,8 +147,14 @@ C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал ко
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win-arm64\native\libSkiaSharp.dll
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win-x64\native\libSkiaSharp.dll
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win-x86\native\libSkiaSharp.dll
-C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\obj\Debug\net7.0\Diplom.csproj.CopyComplete
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\obj\Debug\net7.0\Diplom.genruntimeconfig.cache
 C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\obj\Debug\net7.0\ref\Diplom.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\Citrus.Avalonia.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win\lib\net7.0\Microsoft.Win32.SystemEvents.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\runtimes\win\lib\net7.0\System.Drawing.Common.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\Material.Avalonia.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\Material.Colors.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\Material.Ripple.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\Material.Styles.dll
+C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\bin\Debug\net7.0\Material.Avalonia.DataGrid.dll

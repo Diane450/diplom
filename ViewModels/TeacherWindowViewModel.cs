@@ -49,9 +49,12 @@ namespace Diplom.ViewModels
             get { return _students; }
             set { _students = this.RaiseAndSetIfChanged(ref _students, value); }
         }
+        public Teacher Teacher { get; set; }
+
 
         public TeacherWindowViewModel(Teacher teacher)
         {
+            Teacher = teacher;
             GetContent(teacher);
         }
         private async Task GetContent(Teacher teacher)

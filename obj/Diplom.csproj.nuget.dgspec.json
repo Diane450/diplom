@@ -69,6 +69,18 @@
               "target": "Package",
               "version": "[11.0.6, )"
             },
+            "Citrus.Avalonia": {
+              "target": "Package",
+              "version": "[2.1.1, )"
+            },
+            "Material.Avalonia": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
+            "Material.Avalonia.DataGrid": {
+              "target": "Package",
+              "version": "[3.4.0, )"
+            },
             "Microsoft.EntityFrameworkCore.Tools": {
               "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
               "suppressParent": "All",
@@ -76,6 +88,10 @@
               "version": "[7.0.18, )"
             },
             "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[7.0.0, )"
+            },
+            "System.Drawing.Common": {
               "target": "Package",
               "version": "[7.0.0, )"
             }
