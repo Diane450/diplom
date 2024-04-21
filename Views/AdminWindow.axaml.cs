@@ -48,5 +48,18 @@ public partial class AdminWindow : Window
         var menuWindow = new DeleteMenuWindow(dataContext, (AdminWindowViewModel)DataContext);
         menuWindow.ShowDialog(this);
     }
+    
+    private void NewDish(object sender, RoutedEventArgs e)
+    {
+        var window = new NewDishWindow((AdminWindowViewModel)DataContext);
+        window.ShowDialog(this);
+    }
 
+    private void EditDish(object sender, RoutedEventArgs e)
+    {
+        var button = (Button)sender;
+        var dataContext = (DishDTO)button.DataContext;
+        var window = new EditDishWindow((AdminWindowViewModel)DataContext, dataContext);
+        window.ShowDialog(this);
+    }
 }

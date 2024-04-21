@@ -15,7 +15,7 @@ namespace Diplom.ViewModels
     {
         public MenuDTO CurrentMenu { get; set; }
 
-        private MenuDTO _menu;
+        private MenuDTO _menu = null!;
 
         public MenuDTO Menu
         {
@@ -23,7 +23,7 @@ namespace Diplom.ViewModels
             set { _menu = this.RaiseAndSetIfChanged(ref _menu, value); }
         }
 
-        private ObservableCollection<Dish> _breakfasts;
+        private ObservableCollection<Dish> _breakfasts = null!;
 
         public ObservableCollection<Dish> Breakfasts
         {
@@ -31,7 +31,7 @@ namespace Diplom.ViewModels
             set { _breakfasts = this.RaiseAndSetIfChanged(ref _breakfasts, value); }
         }
 
-        private ObservableCollection<Dish> _lunches;
+        private ObservableCollection<Dish> _lunches = null!;
 
         public ObservableCollection<Dish> Lunches
         {
@@ -39,7 +39,7 @@ namespace Diplom.ViewModels
             set { _lunches = this.RaiseAndSetIfChanged(ref _lunches, value); }
         }
 
-        private ObservableCollection<Dish> _dinners;
+        private ObservableCollection<Dish> _dinners = null!;
 
         public ObservableCollection<Dish> Dinners
         {
@@ -48,7 +48,7 @@ namespace Diplom.ViewModels
         }
 
 
-        private ObservableCollection<MenuDish> _menuDishes;
+        private ObservableCollection<MenuDish> _menuDishes = null!;
 
         public ObservableCollection<MenuDish> MenuDishes
         {
@@ -56,7 +56,7 @@ namespace Diplom.ViewModels
             set { _menuDishes = this.RaiseAndSetIfChanged(ref _menuDishes, value); }
         }
 
-        private Dish _selectedBreakfast;
+        private Dish _selectedBreakfast = null!;
 
         public Dish SelectedBreakfast
         {
@@ -64,7 +64,7 @@ namespace Diplom.ViewModels
             set { _selectedBreakfast = this.RaiseAndSetIfChanged(ref _selectedBreakfast, value); }
         }
 
-        private Dish _selectedLunch;
+        private Dish _selectedLunch = null!;
 
         public Dish SelectedLunch
         {
@@ -72,7 +72,7 @@ namespace Diplom.ViewModels
             set { _selectedLunch = this.RaiseAndSetIfChanged(ref _selectedLunch, value); }
         }
 
-        private Dish _selectedDinner;
+        private Dish _selectedDinner = null!;
 
         public Dish SelectedDinner
         {
@@ -80,7 +80,7 @@ namespace Diplom.ViewModels
             set { _selectedDinner = this.RaiseAndSetIfChanged(ref _selectedDinner, value); }
         }
 
-        private string _message;
+        private string _message = null!;
 
         public string Message
         {

@@ -21,7 +21,7 @@ namespace Diplom.ViewModels
             set { _index = this.RaiseAndSetIfChanged(ref _index, value); }
         }
 
-        private ObservableCollection<ProductDTO> _products;
+        private ObservableCollection<ProductDTO> _products = null!;
 
         public ObservableCollection<ProductDTO> Products
         {
@@ -29,13 +29,25 @@ namespace Diplom.ViewModels
             set { _products = this.RaiseAndSetIfChanged(ref _products, value); }
         }
 
-        private ObservableCollection<MenuDTO> _menus;
+        private ObservableCollection<MenuDTO> _menus = null!;
 
         public ObservableCollection<MenuDTO> Menus
         {
             get { return _menus; }
             set { _menus = this.RaiseAndSetIfChanged(ref _menus, value); }
         }
+
+        public List<DishDTO> DishesList { get; set; } = null!;
+
+        private ObservableCollection<DishDTO> _dishes = null!;
+
+        public ObservableCollection<DishDTO> Dishes
+        {
+            get { return _dishes; }
+            set { _dishes = this.RaiseAndSetIfChanged(ref _dishes, value); }
+        }
+
+
         public AdminWindowViewModel()
         {
             GetContent();
@@ -45,6 +57,11 @@ namespace Diplom.ViewModels
             Products = await DBCall.GetProducts();
 
             Menus = await DBCall.GetMenus();
+
+            DishesList = await DBCall.GetAllDishes();
+
+            Dishes = new ObservableCollection<DishDTO>(DishesList);
+
         }
     }
 }

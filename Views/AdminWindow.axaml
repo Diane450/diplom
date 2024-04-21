@@ -12,7 +12,31 @@
         
 	<TabControl SelectedIndex="{Binding Index}" TabStripPlacement="Left" Margin="0 20 0 0">
 		<TabItem Header="Блюдо">
-			<TextBlock Margin="5"></TextBlock>
+			<StackPanel>
+				<StackPanel Orientation="Horizontal" Margin="0 0 0 20">
+					<TextBlock Text="Список всех блюд" FontWeight="Bold"/>
+					<Button Content="Добавить новое" Margin="20 0 0 0" Click="NewDish"/>
+				</StackPanel>
+				<DataGrid ItemsSource="{Binding Dishes}"
+					  IsReadOnly="False"
+					  CanUserReorderColumns="True"
+					  CanUserResizeColumns="True"
+					  CanUserSortColumns="False"
+					  GridLinesVisibility="None"
+					BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+					<DataGrid.Columns >
+						<DataGridTextColumn Header="Наименование" Binding="{Binding Name}" />
+						<DataGridTextColumn Header="Тип" Binding="{Binding Type.Name}"/>
+						<DataGridTemplateColumn Header="">
+							<DataGridTemplateColumn.CellTemplate>
+								<DataTemplate>
+									<Button Content="Редактировать" Margin="10 10 0 10" Click="EditDish"></Button>
+								</DataTemplate>
+							</DataGridTemplateColumn.CellTemplate>
+						</DataGridTemplateColumn>
+					</DataGrid.Columns>
+				</DataGrid>
+			</StackPanel>
 		</TabItem>
 		<TabItem Header="Меню">
 			<StackPanel>

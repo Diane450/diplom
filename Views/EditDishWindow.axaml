@@ -1,0 +1,51 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:vm="using:Diplom.ViewModels"
+		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        x:Class="Diplom.EditDishWindow"
+        x:DataType="vm:EditDishWindowViewModel"
+        Icon="/Assets/open-book.png"
+        Title=""
+		WindowStartupLocation="CenterScreen">
+	<StackPanel Margin="20" Orientation="Horizontal">
+		<StackPanel Width="350">
+			<TextBlock Text="Название блюда: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
+			<TextBox Width="150" TextWrapping="Wrap" MaxLength="50" Text="{Binding Dish.Name}" Margin="0 0 0 20" HorizontalAlignment="Left"/>
+
+			<TextBlock Text="Выберите ингредиент: " Margin="0 0 0 20" FontWeight="Bold" VerticalAlignment="Center"/>
+
+			<StackPanel>
+				<ComboBox ItemsSource="{Binding Products}" SelectedItem="{Binding SelectedProduct}" DisplayMemberBinding="{Binding Name}" SelectedValueBinding="{Binding Id}" Margin="0 20 20 0"/>
+				<TextBox Margin="0 20 20 0" Watermark="Укажите количество" Text="{Binding ProductQuantity}" Width="200" HorizontalAlignment="Left"/>
+				<Button Content="Добавить ингредиент" Margin="0 20 20 0" Command="{Binding AddIngridient}" IsEnabled="{Binding IsAddIngredintEnable}"/>
+			</StackPanel>
+			<Button Content="Сохранить изменения" Margin="0 20 0 20" IsEnabled="{Binding IsAddEnable}" Command="{Binding SaveChanges}"/>
+			<TextBlock Text="{Binding Message}" Margin="0 20 0 0"/>
+		</StackPanel>
+
+		<DataGrid ItemsSource="{Binding Recipe}" Width="600"
+						HorizontalAlignment="Left"
+						VerticalAlignment="Top"
+					  IsReadOnly="False"
+					  CanUserReorderColumns="True"
+					  CanUserResizeColumns="True"
+					  CanUserSortColumns="False"
+					  GridLinesVisibility="None"
+					BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+			<DataGrid.Columns >
+				<DataGridTextColumn Header="Ингредиент" Binding="{Binding Product.Name}" />
+				<DataGridTextColumn Header="Количество" Binding="{Binding ProductQuantity}" />
+				<DataGridTemplateColumn Header="">
+					<DataGridTemplateColumn.CellTemplate>
+						<DataTemplate>
+							<Button Content="Удалить" Margin="10 10 0 10" Click="RemoveIngridient"></Button>
+						</DataTemplate>
+					</DataGridTemplateColumn.CellTemplate>
+				</DataGridTemplateColumn>
+			</DataGrid.Columns>
+		</DataGrid>
+		
+	</StackPanel>
+</Window>

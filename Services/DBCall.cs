@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -103,11 +104,18 @@ namespace Diplom.Services
         {
             var Dishes = new ObservableCollection<MenuDish>(await _dbContext.MenuDishes
                 .Include(t => t.Dish)
-                .Where(t => t.MenuId == menuSchedule.Id).ToListAsync());
+                .Where(t => t.MenuId == menuSchedule.MenuId).ToListAsync());
             return Dishes;
         }
 
         public static async Task<ObservableCollection<Recipe>> GetRecipe(Dish dish)
+        {
+            return new ObservableCollection<Recipe>(await _dbContext.Recipes
+                .Include(r => r.Product)
+                .Where(r => r.DishId == dish.Id).ToListAsync());
+        }
+
+        public static async Task<ObservableCollection<Recipe>> GetRecipe(DishDTO dish)
         {
             return new ObservableCollection<Recipe>(await _dbContext.Recipes
                 .Include(r => r.Product)
@@ -154,6 +162,7 @@ namespace Diplom.Services
                 Name = p.Name,
             }).ToListAsync());
         }
+
         public static async Task<ObservableCollection<Dish>> GetAllBreakfasts()
         {
             return new ObservableCollection<Dish>(await _dbContext.Dishes.Where(d => d.DishesTypeId == 1).ToListAsync());
@@ -223,6 +232,81 @@ namespace Diplom.Services
             var menu = await _dbContext.Menus.FirstAsync(x => x.Id == menuDTO.Id);
             _dbContext.Menus.Remove(menu);
             await _dbContext.SaveChangesAsync();
+        }
+
+        public static async Task<List<DishDTO>> GetAllDishes()
+        {
+            return await _dbContext.Dishes
+                .Include(d => d.DishesType)
+                .Select(d => new DishDTO()
+                {
+                    Id = d.Id,
+                    Name = d.Name,
+                    Type = new DishTypeDTO
+                    {
+                        Id = d.DishesTypeId,
+                        Name = d.DishesType.Name,
+                    }
+                }).ToListAsync();
+        }
+
+        public static async Task<ObservableCollection<DishTypeDTO>> GetDishTypes()
+        {
+            return new ObservableCollection<DishTypeDTO>(await _dbContext.DishesTypes.Select(x => new DishTypeDTO()
+            {
+                Id = x.Id,
+                Name = x.Name,
+            }).ToListAsync());
+        }
+
+        public static async Task<ObservableCollection<Product>> GetAllProducts()
+        {
+            return new ObservableCollection<Product>(await _dbContext.Products.ToListAsync());
+        }
+
+        public static async Task AddNewDish(DishDTO dishDTO)
+        {
+            var dish = new Dish()
+            {
+                Name = dishDTO.Name,
+                DishesTypeId = dishDTO.Type.Id,
+            };
+            await _dbContext.Dishes.AddAsync(dish);
+            await _dbContext.SaveChangesAsync();
+            dishDTO.Id = dish.Id;
+        }
+
+        public static async Task AddNewRecipe(DishDTO dishDTO, ObservableCollection<Recipe> recipe)
+        {
+            for (int i = 0; i < recipe.Count; i++)
+            {
+                recipe[i].DishId = dishDTO.Id;
+                await _dbContext.Recipes.AddAsync(recipe[i]);
+                await _dbContext.SaveChangesAsync();
+            }
+        }
+
+        public static async Task UpdateDish(DishDTO dishDTO)
+        {
+            var dish = await _dbContext.Dishes.FirstAsync(x => x.Id == dishDTO.Id);
+            dish.Name = dishDTO.Name;
+            await _dbContext.SaveChangesAsync();
+        }
+
+        public static async Task UpdateRecipe(ObservableCollection<Recipe> newRecipe, DishDTO dishDTO)
+        {
+            var oldRecipes = await _dbContext.Recipes.Where(x => x.Dish.Id == dishDTO.Id).ToListAsync();
+            for (int i = 0; i < oldRecipes.Count; i++)
+            {
+                _dbContext.Recipes.Remove(oldRecipes[i]);
+                await _dbContext.SaveChangesAsync();
+            }
+            for (int i = 0; i < newRecipe.Count; i++)
+            {
+                newRecipe[i].DishId = dishDTO.Id;
+                await _dbContext.Recipes.AddAsync(newRecipe[i]);
+                await _dbContext.SaveChangesAsync();
+            }
         }
     }
 }
