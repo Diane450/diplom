@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:vm="using:Diplom.ViewModels"
 		xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+        mc:Ignorable="d" Width="45" Height="610" MinWidth="655" MinHeight="610" MaxHeight="610" MaxWidth="680"
         x:Class="Diplom.AdminWindow"
 		x:DataType="vm:AdminWindowViewModel"
         Icon="/Assets/open-book.png"

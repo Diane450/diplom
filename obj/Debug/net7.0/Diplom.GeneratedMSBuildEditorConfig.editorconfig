@@ -13,46 +13,48 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Diplom
-build_property.ProjectDir = C:\Users\Home\Desktop\-(¯`v´¯)-\Visual studio\чтото в вижуал коде\Diplom\
+build_property.ProjectDir = C:\Users\Admin\Desktop\diplom\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/App.axaml]
+[C:/Users/Admin/Desktop/diplom/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/AdminWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/AdminWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/AuthorizeWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/AuthorizeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/CookWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/CookWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/DeleteMenuWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/DeleteMenuWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/DishDetailsWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/DishDetailsWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/EditDishWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/EditDishWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/EditMenuWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/EditMenuWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/EditProductWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/EditProductWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/NewDishWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/NewDishWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/NewMenuWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/NewMenuWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/NewProductWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/NewProductWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/StudentWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/StudentWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Home/Desktop/-(¯`v´¯)-/Visual studio/чтото в вижуал коде/Diplom/Views/TeacherWindow.axaml]
+[C:/Users/Admin/Desktop/diplom/Views/TeacherWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

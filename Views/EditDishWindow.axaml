@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:Diplom.ViewModels"
-		mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+		mc:Ignorable="d" Width="800" Height="610" MinWidth="800" MinHeight="610" MaxWidth="900"
         x:Class="Diplom.EditDishWindow"
         x:DataType="vm:EditDishWindowViewModel"
         Icon="/Assets/open-book.png"
@@ -33,7 +33,7 @@
 					  CanUserResizeColumns="True"
 					  CanUserSortColumns="False"
 					  GridLinesVisibility="None"
-					BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+					BorderThickness="0" BorderBrush="Gray" Height="500">
 			<DataGrid.Columns >
 				<DataGridTextColumn Header="Ингредиент" Binding="{Binding Product.Name}" />
 				<DataGridTextColumn Header="Количество" Binding="{Binding ProductQuantity}" />

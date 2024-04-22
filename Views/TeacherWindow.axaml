@@ -3,7 +3,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:vm="using:Diplom.ViewModels"
-		mc:Ignorable="d" Width="1140" Height="560" MaxWidth="1140" MaxHeight="600"
+		mc:Ignorable="d" Width="690" Height="600" MaxWidth="750" MaxHeight="600"
         x:Class="Diplom.TeacherWindow"
         x:DataType="vm:TeacherWindowViewModel"
         Icon="/Assets/open-book.png"
@@ -31,7 +31,7 @@
 					CanUserResizeColumns="True"
 					CanUserSortColumns="False"
 					GridLinesVisibility="All"
-				  BorderThickness="1" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+				  BorderThickness="1" BorderBrush="Gray" Height="500">
 					<DataGrid.Columns>
 						<DataGridTextColumn Header="ФИО" Binding="{Binding FullName}"  />
 						<DataGridTextColumn Header="Статус" Binding="{Binding Statuss.Name}" />

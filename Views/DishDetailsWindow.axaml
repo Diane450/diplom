@@ -20,7 +20,7 @@
 						CanUserSortColumns="False"
 						GridLinesVisibility="None"
 					  HeadersVisibility="None"
-					  BorderThickness="0" BorderBrush="Gray" HorizontalScrollBarVisibility="Visible" Height="500">
+					  BorderThickness="0" BorderBrush="Gray" Height="500">
 
 			<DataGrid.Columns >
 				<DataGridTextColumn Header="Ингридиент: " Binding="{Binding Product.Name}" />
