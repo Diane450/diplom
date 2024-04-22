@@ -54,14 +54,22 @@ namespace Diplom.ViewModels
         }
         public async Task GetContent()
         {
-            Products = await DBCall.GetProducts();
+            var tasks = new List<Task>();
+            tasks.Add(DBCall.GetProducts().ContinueWith(t => Products = new ObservableCollection<ProductDTO>(t.Result)));
+            tasks.Add(DBCall.GetMenus().ContinueWith(t => Menus = new ObservableCollection<MenuDTO>(t.Result)));
+            tasks.Add(DBCall.GetAllDishes().ContinueWith(t => DishesList = t.Result));
 
-            Menus = await DBCall.GetMenus();
-
-            DishesList = await DBCall.GetAllDishes();
+            await Task.WhenAll(tasks);
 
             Dishes = new ObservableCollection<DishDTO>(DishesList);
 
+            //Products = await DBCall.GetProducts();
+
+            //Menus = await DBCall.GetMenus();
+
+            //DishesList = await DBCall.GetAllDishes();
+
+            //Dishes = new ObservableCollection<DishDTO>(DishesList);
         }
     }
 }

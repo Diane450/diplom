@@ -48,7 +48,8 @@ namespace Diplom.Services
                                                             Name = statuses.Name,
                                                         }
                                                     }).ToListAsync();
-                result.Add(classes[i], students);
+                var sortedStudents = students.OrderBy(s => s.FullName).ToList();
+                result.Add(classes[i], sortedStudents);
             }
             return result;
         }
