@@ -13,48 +13,46 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = Diplom
-build_property.ProjectDir = C:\Users\Admin\Desktop\diplom\
-build_property.EnableComHosting = 
-build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.ProjectDir = C:\Users\Home\Source\Repos\diplom\
 
-[C:/Users/Admin/Desktop/diplom/App.axaml]
+[C:/Users/Home/Source/Repos/diplom/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/AdminWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/AdminWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/AuthorizeWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/AuthorizeWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/CookWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/CookWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/DeleteMenuWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/DeleteMenuWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/DishDetailsWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/DishDetailsWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/EditDishWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/EditDishWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/EditMenuWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/EditMenuWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/EditProductWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/EditProductWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/NewDishWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/NewDishWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/NewMenuWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/NewMenuWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/NewProductWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/NewProductWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/StudentWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/StudentWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[C:/Users/Admin/Desktop/diplom/Views/TeacherWindow.axaml]
+[C:/Users/Home/Source/Repos/diplom/Views/TeacherWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
