@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "JKcspSnYKmJIeLPXCZEQsByOYYfO1MeC4hR0qyOL2wROpd4WJ3XK13ka5bm+JVuaR97AGLrPtPjQojCT6jH/Lg==",
+  "dgSpecHash": "lGhnTwESPDc8NMkQXMSVdPzZlQ2torA090M5qK0j3niDRwpeQBRAgTImgostoolOY/YMBun3cenj7xc6hnZ+Sw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Home\\Source\\Repos\\diplom\\Diplom.csproj",
+  "projectFilePath": "C:\\Users\\Home\\Desktop\\vsProjects\\school\\Diplom.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Home\\.nuget\\packages\\avalonia\\11.0.6\\avalonia.11.0.6.nupkg.sha512",
     "C:\\Users\\Home\\.nuget\\packages\\avalonia.angle.windows.natives\\2.1.0.2023020321\\avalonia.angle.windows.natives.2.1.0.2023020321.nupkg.sha512",
